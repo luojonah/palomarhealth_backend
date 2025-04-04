@@ -7,8 +7,11 @@ from flask_login import current_user, login_user, logout_user
 from flask.cli import AppGroup
 from flask_login import current_user, login_required
 from flask import current_app
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash
 import shutil
+app = Flask(__name__)
 
 
 
@@ -26,6 +29,9 @@ from api.nestPost import nestPost_api # Justin added this, custom format for his
 from api.messages_api import messages_api # Adi added this, messages for his website
 from api.carphoto import car_api
 from api.carChat import car_chat_api
+from api.routes import api_bp
+import os
+
 
 from api.vote import vote_api
 # database Initialization functions
